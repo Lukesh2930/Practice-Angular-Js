@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Angular Js-Scope And Controller</title>
+    <script src="../Scripts/angular.min.js"></script>
+    <script src="../Scripts/angular.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+
+
+</head>
+
+<body>
+    <div class="jumbotron text-center">
+        <h1>Scope And Controller</h1>
+        <p><b>Angular Js Scope And Controller Example</b></p>
+    </div>
+    <div class="container">
+        <div ng-app="test" ng-controller="t" class="container">
+            <label>Name</label>
+            <input id="Name" type="text" class="form-control" ng-model="Yourname" placeholder="Enter your Name" />
+            <hr />
+            <label>Hello <span class="text-success">{{Yourname}}</span>!</label>
+            <p> hi  <span>{{Yourname}}</span>,I hope you doing well</p>
+            <br />
+            <input ng-click="changename()" type="button" class="btn btn-default" value="Change Name" />
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script>
+        var app = angular.module("test", []);
+        app.controller("t", function ($scope) {
+            $scope.changename = function () {
+                var input = prompt("enter a name here");
+                if (input) $scope.Yourname = input;
+            }
+        });
+    </script>
+</body>
+</html>

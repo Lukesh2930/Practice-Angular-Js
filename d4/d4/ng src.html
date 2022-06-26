@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html ng-app="test">
+<head>
+    <meta charset="utf-8" />
+    <title>Ng Src</title>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+</head>
+<body>
+    <div ng-controller="t">
+        <div>
+            NAME:{{country.name}}
+        </div>
+        <div>
+            Capital:{{country.capital}}
+        </div>
+        <div>
+            <img src="{{country.Image}}" alt="{{country.name +'flag'}}" style="height:100px; width:200px" />
+        </div>
+
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script>
+        var app = angular.module("test", []);
+        app.controller("t", function ($scope) {
+            var country = {
+                name: "India",
+                capital: "delhi",
+                Image: "/Image/BackGround.jpeg"
+            };
+            $scope.country = country;
+        });
+    </script>
+</body>
+</html>

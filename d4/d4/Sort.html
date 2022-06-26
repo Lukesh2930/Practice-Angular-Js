@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="style.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <script src="../Scripts/angular.js"></script>
+    <script src="../Scripts/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+</head>
+<body ng-app="test" style="font-family:Arial">
+    <div ng-controller="t">
+        Sorted By<select ng-model="sortcolumn">
+            <option value="name">Name ASC</option>
+            <option value="Age">Age ASC</option>
+            <option value="Gender">Gender DESC</option>
+            <option value="salary">Salary DESC</option>
+
+        </select>
+        <br />
+        <br />
+        <table>
+            <thead>
+                <tr>
+                    <th> Name</th>
+                    <th>Age</th>
+                    <th>Genger</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees |orderBy:sortcolumn">
+                    <td>{{employee.name|uppercase}}</td>
+                    <td>{{employee.Age}}</td>
+                    <td>{{employee.Gender|lowercase}}</td>
+                    <td>{{employee.salary|currency:"$":1}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script>
+        var app = angular.module("test", []);
+        app.controller("t", function ($scope) {
+            var employees = [
+                { name: "lukesh", Age: 24, Gender: "Male", salary: 34000 },
+                { name: "kamalesh", Age: 21, Gender: "Male", salary: 14000 },
+                { name: "princy", Age: 23, Gender: "Female", salary: 28000 },
+                { name: "luckman", Age: 25, Gender: "Male", salary: 454000 },
+                { name: "Yuvaraj", Age: 24, Gender: "Male", salary: 34000 }
+            ];
+            $scope.employees = employees;
+            $scope.sortcolumn = "name";
+        });
+    </script>
+</body>
+</html>

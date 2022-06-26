@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Angular Js-Data Binding</title>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="../Scripts/angular.js"></script>
+    <script src="../Scripts/angular.min.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+
+</head>
+
+<body>
+    <div class="jumbotron text-center">
+        <h1>Data Binding</h1>
+        <p><b>Angular Js Data Binding Example</b></p>
+    </div>
+    <div class="container">
+        <div ng-app="test" ng-controller="t" class="container">
+            <label>Name</label>
+            <input id="Name" type="text" class="form-control" ng-model="Yourname" placeholder="Enter your Name" />
+            <hr />
+            <label>Hello <span class="text-success">{{Yourname}}</span>!</label>
+            <p> hi  <span>{{Yourname}}</span>,I hope youdoing well</p>
+            <br />
+            <h1>Paragraph example</h1>
+            <p ng-bind="Yourname"></p>
+            <br />
+            <input ng-click="changename()" type="button" class="btn btn-default" value="Change Name" />
+            <input type="button" class="btn btn-success" value="{{Yourname}}" />
+        </div>
+    </div>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="../Scripts/angular.js"></script>
+    <script src="../Scripts/angular.min.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script>
+        var app = angular.module("test", []);
+        app.controller("t", function ($scope) {
+            $scope.changename = function () {
+                var input = prompt("enter a name here");
+                if (input) $scope.Yourname = input;
+            }
+        });
+    </script>
+</body>
+</html>

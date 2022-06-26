@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Expression</title>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="../Scripts/angular.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+</head>
+<body>
+    <div class="jumbotron text-center">
+        <h1>Expressions</h1>
+        <p><b>Angular Js Expression Example</b></p>
+    </div>
+    <div class="container">
+        <div ng-app class="form-group" ng-init="a=10;b=20.5;c={'gty':10,'rate':8.25};score=[55,23,45]">
+            <h1>Numbers</h1>
+            5+10.5={{5+10.5}}
+            <br/>
+            <h1>Variable</h1>
+            {{a}}+{{b}}={{a+b}}
+            <br/>
+            <h1>Object</h1>
+            Qty:{{c.gty}} * Rate: {{c.rate}}={{c.rate * c.gty}}
+            <br/>
+            <h1>Array</h1>
+            Scores:{{score[0]}},{{score[1]}},{{score[2]}} total: {{score[0]+score[1]+score[2]}}
+            <h1>Binding</h1>
+            <p ng-bind="a+b"></p>
+        </div>
+    </div>
+</body>
+</html>

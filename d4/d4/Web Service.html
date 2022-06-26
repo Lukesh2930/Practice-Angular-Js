@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Web Service</title>
+    <link href="style.css" rel="stylesheet" />
+    <script src="../Scripts/angular.min.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+</head>
+<body ng-app="myModule">
+    <div ng-controller="myController">
+        <table>
+            <thead>
+                <tr>
+                   <th>Id</th>
+                    <th>Nmae</th>
+                    <th>Age</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees">
+                    <td>{{employee.Id}}</td>
+                    <td>{{employee.Name}}</td>
+                    <td>{{employee.age}}</td>
+                    <td>{{employee.salary}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+<script>
+    var app = angular
+        .module("myModule", [])
+        .controller("myController", function ($scope, $http) {
+
+            $http.post("EmployeeService.asmx/GetAllEmployees")
+                .then(function (response) {
+                    $scope.employees = response.data;
+                });
+
+        });
+</script>
+</body>
+</html>

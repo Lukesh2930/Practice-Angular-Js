@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular.js"></script>
+</head>
+<body ng-app="myModule">
+    <div ng-controller="myController">
+        <table>
+            <tr>
+                <td>Your String</td>
+                <td><input type="text" ng-model="input" /> </td>
+            </tr>
+            <tr>
+                <td>Result</td>
+                <td><input type="text" ng-model="output" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="button" ng-click="transformString(input)"
+                           value="Process String" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script>
+        var app = angular
+            .module("myModule", [])
+            .controller("myController", function ($scope, stringService) {
+                $scope.transformString = function (input) {
+                    $scope.output = stringService.processString(input);
+                };
+            });
+    </script>
+    <script>
+        app.factory('stringService', function () {
+            return {
+                processString: function (input) {
+                    if (!input)
+                        return input;
+
+                    var output = "";
+
+                    for (var i = 0; i < input.length; i++) {
+                        if (i > 0 && input[i] == input[i].toUpperCase()) {
+                            output = output + " ";
+                        }
+
+                        output = output + input[i];
+                    }
+
+                    return output;
+                }
+            };
+        });
+    </script>
+</body>
+</html>
