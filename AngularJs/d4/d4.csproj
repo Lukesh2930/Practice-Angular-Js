@@ -75,12 +75,13 @@
     <Content Include="Image\BackGround.jpeg" />
     <Content Include="Events.html" />
     <Content Include="Index.html" />
-    <Content Include="Index1.html" />
     <Content Include="Multiple column Search.html" />
+    <Content Include="Nested Scope and Controller As.html" />
     <Content Include="Ng hide and show.html" />
     <Content Include="Ng Repeat.html" />
     <Content Include="ng src.html" />
     <Content Include="Model Binding.html" />
+    <Content Include="RootScope.html" />
     <Content Include="Scope And Controller.html" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular-route.js" />
@@ -96,7 +97,10 @@
     <Content Include="StyleSheet1.css" />
     <Content Include="Templates\courses.html" />
     <Content Include="Templates\home.html" />
-    <Content Include="Templates\Students.html" />
+    <Content Include="Templates\student.html" />
+    <Content Include="Templates\students.html" />
+    <Content Include="Templates\studentDetails.html" />
+    <Content Include="Templates\studentsSearch.html" />
     <Content Include="Web Service.html" />
     <Content Include="Web.config" />
   </ItemGroup>

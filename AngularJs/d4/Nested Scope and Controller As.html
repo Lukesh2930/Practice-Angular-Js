@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html ng-app="Demo">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="Scripts/angular-route.min.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/JavaScript.js"></script>
+</head>
+<body>
+    <div ng-controller="countryController as countryCtrl">
+        {{countryCtrl.name}}
+        <div ng-controller="stateController as stateCtrl">
+            {{countryCtrl.name}} - {{stateCtrl.name}}
+            <div ng-controller="cityController as cityCtrl">
+                {{countryCtrl.name}} - {{stateCtrl.name}} - {{cityCtrl.name}}
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
